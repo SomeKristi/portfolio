@@ -5,11 +5,5 @@
 body {
   background-color: var(--color-pry-950);
   color: var(--color-pry-100);
-  font-family: system-ui, sans-serif;
-  font-weight: normal;
-}
-
-ContentTitle {
-  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-  font-weight: normal;
+  font-family: var(--font-family-normal);
 }

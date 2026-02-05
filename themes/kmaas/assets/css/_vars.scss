@@ -10,10 +10,24 @@ $theme-colors: (
 
 
 $theme-fonts: (
-    "normal": "system-ui, sans-serif",
-    "title": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+    "family": (
+        "normal": "system-ui, sans-serif",
+        "title": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+    ),
+    "weight": (
+        "light": "100",
+        "normal": "normal",
+        "bold": "bold"
+    )
 );
 
+
+$theme-sizes: (
+    0.25,0.5,0.75,
+    1,1.5, 2,
+    3,4,6
+    8
+);
 
 
 
@@ -25,8 +39,15 @@ html {
             --color-#{$varname}-#{$name}: #{$value};
         }
     }
+    
+    @each $varname, $data in $theme-fonts {
+        @each $name, $value in $data {
+            --font-#{$varname}-#{$name}: #{$value};
+        }
+    }
 
-    @each $name, $value in $theme-fonts {
-        --font-#{$name}: #{$value};
+    @for $i from 1 through length($theme-sizes) {
+        $val: nth($theme-sizes, $i);
+        --size-#{$i}: #{$val}rem;
     }
 }
