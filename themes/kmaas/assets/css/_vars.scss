@@ -1,0 +1,29 @@
+$theme-colors: (
+    "pry": (
+        "100":hsl(102.8, 100%, 10%),
+        "950": hsl(44.637, 21%, 5%),
+    )
+);
+
+
+$theme-fonts: (
+    "normal": "system-ui, sans-serif",
+    "title": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+);
+
+
+
+
+
+/* GENERATOR */
+html {
+    @each $varname, $colors in $theme-colors {
+        @each $name, $value in $colors {
+            --color-#{$varname}-#{$name}: #{$value};
+        }
+    }
+
+    @each $name, $value in $theme-fonts {
+        --font-#{$name}: #{$value};
+    }
+}
