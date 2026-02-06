@@ -4,5 +4,5 @@
     <h1 style="view-transition-name: site-brand-title;">Kristian Maas</h1>
 </a>
 {{ end }}
-<button id="main-menu-open" class="mobile-button">{{ partial "icon" "menu" }}</button>
+<button id="main-menu-open" class="mobile-button" style="view-transition-name: mobile-nav-button;">{{ partial "icon" "menu" }}</button>
 {{ partial "menu.html" (dict "menuID" "main" "page" . ) }}
