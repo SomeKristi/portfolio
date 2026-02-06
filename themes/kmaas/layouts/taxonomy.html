@@ -1,7 +1,16 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-  {{ end }}
+  <div class="cw">
+      <div class="page-title">
+        <h1>{{ .Title }}</h1>
+      </div>
+    <div class="content main-content">
+      {{ .Content }}
+    </div>
+    <div class="tags">
+      {{ range .Pages }}
+        {{ $PageKey := printf "%s-%s" .LinkTitle .Kind | urlize}}
+        <h2><a href="{{ .RelPermalink }}" style="view-transition-name: pd-{{$PageKey | safeCSS}}">{{ .LinkTitle }}</a></h2>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}

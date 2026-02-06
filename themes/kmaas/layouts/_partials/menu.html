@@ -11,7 +11,10 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="main-menu" style="view-transition-name: site-nav;">
+  <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID}};">
+    {{ if $menuID = "main"}}
+      <button id="main-menu-close" class="mobile-button">{{ partial "icon" "close" }}</button>
+    {{ end }}
     <ul>
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>

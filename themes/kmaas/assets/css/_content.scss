@@ -1,11 +1,31 @@
 .content {
-    max-width: var(--content-width);
-    margin-inline: auto;
-    padding:  var(--size-3);
     h1 {
         font-family: var(--font-family-title);
         font-weight: var(--font-weight-light);
         margin-top: var(--size-6);
         margin-bottom: var(--size-1);
+    }
+}
+
+.cw {
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding-inline:  var(--size-3);
+}
+
+.content-info {
+    display: flex;
+    margin-inline: var(--size-3);
+}
+
+.tags {
+    display: flex;
+    gap: var(--size-4);
+    flex-wrap: wrap;
+    a {
+        color: var(--color-pry-100);
+        &:hover {
+            color: var(--color-pry-300);
+        }
     }
 }

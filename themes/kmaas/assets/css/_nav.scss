@@ -14,7 +14,7 @@ header {
         color: var(--color-pry-100);
         display: flex;
         flex-grow: 1;
-        align-items: center;
+        align-items: end;
         gap: var(--size-2);
         text-decoration: none;
         h1 {
@@ -28,7 +28,20 @@ header {
             height: var(--size-6);
         }
     }
-    
+    #main-menu-close, 
+    #main-menu-open {
+        background-color: transparent;
+        padding: var(--size-2);
+        
+        font-family: var(--font-family-title);
+        color: var(--color-pry-100);
+        text-decoration: none;
+        border: transparent 1px solid;
+        svg {
+            display: block;
+            margin: 0;
+        }
+    }
     #main-menu ul {
         list-style: none;
         display: flex;
@@ -50,8 +63,18 @@ header {
                 border: var(--color-pry-100) 1px solid;
             }
             &.active {
-                color: var(--color-pry-950);
-                background-color: var(--color-pry-100);
+                color: var(--color-pry-100);
+                position: relative;
+                &::after {
+                    view-transition-name: current-nav-item;
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: currentColor;
+                }
             }
         }
     }
@@ -63,5 +86,56 @@ header {
         border-bottom: transparent 1px solid;
 
         justify-content: center;
+    }
+    .mobile-button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 70rem) {
+    header {
+        #main-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: var(--size-4);
+            background-color: var(--color-pry-950);
+            z-index: 200;
+            transform: translateX(100%);
+            pointer-events: none;
+            transition: transform 200ms;
+            &.open {
+                pointer-events: all;
+
+                transform: translateX(0%);
+            }
+            #main-menu-close {
+                margin-bottom: var(--size-3);
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: var(--size-4);
+                li > * {
+                    border-left: var(--color-pry-700) 1px solid;
+
+                    padding-left: var(--size-3);
+                    &.active {
+                        &::after {
+                            top: 0;
+                            left: 0;
+                            width: 4px;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .mobile-button {
+            display: block;
+        }
     }
 }

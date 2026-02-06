@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <symbol id="menu" viewBox="0 0 100 100" bx:pinned="true">
+      <title>menu</title>
+      <g transform="matrix(1, 0, 0, 1, 0.000001, -7.171999)">
+        <rect x="9.999" y="29.781" width="80.002" height="5.39" style="stroke-width: 2.348; fill: currentcolor;"/>
+        <rect x="9.999" y="79.173" width="80.002" height="5.39" style="stroke-width: 2.348; fill: currentcolor;"/>
+        <rect x="9.999" y="54.477" width="80.002" height="5.39" style="stroke-width: 2.348; fill: currentcolor;"/>
+      </g>
+    </symbol>
+    <symbol id="close" viewBox="0 0 100 100" bx:pinned="true">
+      <g transform="matrix(1, 0, 0, 1, -113.08403, 9.898992)">
+        <rect x="123.083" y="25.058" width="80.002" height="5.39" style="stroke-width: 2.348; fill: currentcolor; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.707107, 0.707107, -0.707107, 0.707107, 0.000032, 12.348009)"/>
+        <rect x="123.083" y="49.754" width="80.002" height="5.39" style="stroke-width: 2.348; fill: currentcolor; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 0.00003, -12.347989)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>

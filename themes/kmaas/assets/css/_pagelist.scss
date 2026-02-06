@@ -9,16 +9,21 @@
         color: var(--color-pry-100);
         text-decoration: none;
         transition: var(--transition-standard);
-        time {
-            font-family: var(--font-family-mono);
-            font-size: var(--size-3);
-            margin: 0;
-        }
-        .title {
-            font-family: var(--font-family-title);
-            font-weight: var(--font-weight-light);
-            font-size: var(--size-6);
-            margin: 0;
+        .head {
+            display: flex;
+            align-items: start;
+            time {
+                margin: 0;
+                font-family: var(--font-family-mono);
+                font-size: var(--size-3);
+            }
+            .title {
+                flex-grow: 1;
+                font-family: var(--font-family-title);
+                font-weight: var(--font-weight-light);
+                font-size: var(--size-6);
+                margin: 0;
+            }
         }
         .content {
             font-family: var(--font-family-normal);

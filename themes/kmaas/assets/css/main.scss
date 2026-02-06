@@ -12,10 +12,9 @@ body {
 }
 
 main {
-  max-width: var(--content-width);
-  margin-inline: auto;
   min-height: 100svh;
 }
+
 
 .hero {
   display: flex;
@@ -23,33 +22,37 @@ main {
   justify-content: center;
   align-items: center;
   height: 50rem;
-  max-height: 100svh;
+  max-height: 80svh;
   gap: var(--size-3);
   position: relative;
-  &::after {
-    z-index: 0;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60rem;
-    height: 60rem;
-    max-width: 100%;
-    pointer-events: none;
-    background: radial-gradient(circle, var(--color-pry-700), transparent 50%);
-    opacity: 0;
-    animation: hero-fade 2s 0.5s ease-in-out forwards;
-  }
+  animation: hero-in 400ms ease-out;
+  view-transition-name: page-hero;
+  
+  background:
+    linear-gradient(to left, var(--color-pry-950) 0, transparent 1rem),
+    linear-gradient(to right, var(--color-pry-950) 0, transparent 1rem),
+
+    linear-gradient(to top, var(--color-pry-950) 0, transparent 5rem),
+    linear-gradient(to bottom, var(--color-pry-950) 0, transparent 5rem),
+    
+    radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), var(--color-pry-700) 0,transparent 5rem),
+    radial-gradient(circle at var(--g2-x,50%)  var(--g2-y,0%), var(--color-pry-700) ,transparent 5rem),
+    
+    repeating-radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 5rem),
+    repeating-radial-gradient(circle at  var(--g2-x,50%)  var(--g2-y,100%), transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 5rem)
+  ;
 
 
   .logo {
     z-index: 1;
     width: var(--size-10);
     height: var(--size-10);
+    filter: drop-shadow(var(--color-pry-700) 0 0 20px);
   }
   h1 {
     z-index: 1;
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-light);
   }
 }
 
@@ -62,8 +65,31 @@ footer {
 }
 
 .page-title {
-  view-transition-name: main-title;
-  padding: var(--size-3);
+
+  h1 {
+    font-family: var(--font-family-title);
+    font-weight: var(--font-weight-light);
+    font-size: var(--size-7);
+    position: absolute;
+    bottom: var(--size-2);
+    left: var(--size-3);
+    right: var(--size-3);
+    margin: 0;
+  }
+  padding-inline: var(--size-3);
+  margin-block: var(--size-5) var(--size-3);
+  position: relative;
+  height: 10rem;
+  view-transition-name: page-hero;
+  background:
+    linear-gradient(to left, var(--color-pry-950) 20%, transparent 50%),
+    linear-gradient(to right, var(--color-pry-950) 0, transparent 0.2rem),
+
+    linear-gradient(to top, var(--color-pry-950) 0, transparent 25%),
+    linear-gradient(to bottom, var(--color-pry-950) 0, transparent 50%),
+    repeating-radial-gradient(circle at 0% 100%, transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 4rem),
+  ;
+
 }
 
 .main-content {
@@ -74,20 +100,8 @@ footer {
   navigation: auto;
 }
 
-
-
-
-::view-transition-old(hero) {
-}
-
-/* New stuff coming in */
-::view-transition-new(site-brand-logo) {
-  transition: width 200ms 400ms,height 200ms 400ms;
-}
-
-
-@keyframes hero-fade {
-  to {
-    opacity: 1;
+@keyframes hero-in {
+  from {
+    opacity: 0;
   }
 }

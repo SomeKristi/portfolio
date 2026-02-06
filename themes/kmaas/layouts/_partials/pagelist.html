@@ -3,23 +3,26 @@
 
 <div class="page-list">
     {{ range $pages }}
+        {{- $pageKey := printf "%s-%s" .LinkTitle .Kind | urlize}}
         {{- $styleTitle := "" }}
         {{- $styleTime := "" }}
         {{- $styleContent := "" }}
         {{- if $transitions }}
-            {{- $styleTitle = printf "view-transition-name: page-title-for-%s;" .LinkTitle | safeCSS }}
-            {{- $styleContent = printf "view-transition-name: page-content-for-%s;" .LinkTitle | safeCSS }}
-            {{- $styleTime = printf "view-transition-name: page-time-for-%s;" .LinkTitle | safeCSS }}
+            {{- $styleTitle = printf "view-transition-name: pt-%s;" $pageKey | safeCSS}}
+            {{- $styleContent = printf "view-transition-name: pc-%s;" $pageKey | safeCSS }}
+            {{- $styleTime = printf "view-transition-name: pd-%s;"  $pageKey | safeCSS }}
         {{- end }}
         <a class="page-item" style="{{ $styleContent }}" href="{{ .RelPermalink }}">
             
             {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
             {{ $dateHuman := .Date | time.Format ":date_long" }}
-            <time datetime="{{ $dateMachine }}" style="{{ $styleTime }}">{{ $dateHuman }}</time>
-
-            <h2 style="{{ $styleTitle }}" class="title">
-                {{ .LinkTitle }}
-            </h2>
+            <div class="head">
+                <h2 style="{{ $styleTitle }}" class="title">
+                    {{ .LinkTitle }}
+                </h2>
+                <time datetime="{{ $dateMachine }}" style="{{ $styleTime }}">{{ $dateHuman }}</time>
+    
+            </div>
 
             <p class="content">
                 {{ .Description }}

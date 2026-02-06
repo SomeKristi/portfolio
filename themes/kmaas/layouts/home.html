@@ -1,10 +1,12 @@
 {{ define "main" }}
   <div class="hero">
-    {{partial "logo.svg" }}
+    {{ ("assets/logo.svg" | readFile) | safeHTML }}
     <h1 style="view-transition-name: site-brand-title;">Kristian Maas</h1>
   </div>
-  <div class="content main-content">
-    {{ .Content }}
+  <div class="cw">
+    <div class="content main-content">
+      {{ .Content }}
+    </div>
   </div>
   <!--{{ partial "pagelist.html" (dict "pages" site.RegularPages "transitions" false) }}-->
 {{ end }}
