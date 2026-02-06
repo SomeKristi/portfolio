@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="hero">
     {{ ("assets/logo.svg" | readFile) | safeHTML }}
-    <h1 style="view-transition-name: site-brand-title;">Kristian Maas</h1>
+    <h1 style="view-transition-name: site-brand-title;">{{ site.Title }}</h1>
   </div>
   <div class="cw">
     <div class="content main-content">
