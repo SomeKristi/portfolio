@@ -5,8 +5,8 @@
 @import "pagelist";
 
 body {
-  background-color: var(--color-pry-950);
-  color: var(--color-pry-100);
+  background-color: var(--color-primary-950);
+  color: var(--color-primary-100);
   font-family: var(--font-family-normal);
   margin: 0;
 }
@@ -29,17 +29,17 @@ main {
   view-transition-name: page-hero;
   
   background:
-    linear-gradient(to left, var(--color-pry-950) 0, transparent 1rem),
-    linear-gradient(to right, var(--color-pry-950) 0, transparent 1rem),
+    linear-gradient(to left, var(--color-primary-950) 0, transparent 1rem),
+    linear-gradient(to right, var(--color-primary-950) 0, transparent 1rem),
 
-    linear-gradient(to top, var(--color-pry-950) 0, transparent 5rem),
-    linear-gradient(to bottom, var(--color-pry-950) 0, transparent 5rem),
+    linear-gradient(to top, var(--color-primary-950) 0, transparent 5rem),
+    linear-gradient(to bottom, var(--color-primary-950) 0, transparent 5rem),
     
-    radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), var(--color-pry-700) 0,transparent 5rem),
-    radial-gradient(circle at var(--g2-x,50%)  var(--g2-y,0%), var(--color-pry-700) ,transparent 5rem),
+    radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), var(--color-primary-700) 0,transparent 5rem),
+    radial-gradient(circle at var(--g2-x,50%)  var(--g2-y,0%), var(--color-primary-700) ,transparent 5rem),
     
-    repeating-radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 5rem),
-    repeating-radial-gradient(circle at  var(--g2-x,50%)  var(--g2-y,100%), transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 5rem)
+    repeating-radial-gradient(circle at var(--g1-x,50%)  var(--g1-y,0%), transparent 0px,var(--color-primary-700) 1px,transparent 2px,transparent 5rem),
+    repeating-radial-gradient(circle at  var(--g2-x,50%)  var(--g2-y,100%), transparent 0px,var(--color-primary-700) 1px,transparent 2px,transparent 5rem)
   ;
 
 
@@ -47,7 +47,7 @@ main {
     z-index: 1;
     width: var(--size-10);
     height: var(--size-10);
-    filter: drop-shadow(var(--color-pry-700) 0 0 20px);
+    filter: drop-shadow(var(--color-primary-700) 0 0 20px);
   }
   h1 {
     z-index: 1;
@@ -82,12 +82,12 @@ footer {
   height: 10rem;
   view-transition-name: page-hero;
   background:
-    linear-gradient(to left, var(--color-pry-950) 20%, transparent 50%),
-    linear-gradient(to right, var(--color-pry-950) 0, transparent 0.2rem),
+    linear-gradient(to left, var(--color-primary-950) 20%, transparent 50%),
+    linear-gradient(to right, var(--color-primary-950) 0, transparent 0.2rem),
 
-    linear-gradient(to top, var(--color-pry-950) 0, transparent 25%),
-    linear-gradient(to bottom, var(--color-pry-950) 0, transparent 50%),
-    repeating-radial-gradient(circle at 0% 100%, transparent 0px,var(--color-pry-700) 1px,transparent 2px,transparent 4rem),
+    linear-gradient(to top, var(--color-primary-950) 0, transparent 25%),
+    linear-gradient(to bottom, var(--color-primary-950) 0, transparent 50%),
+    repeating-radial-gradient(circle at 0% 100%, transparent 0px,var(--color-primary-700) 1px,transparent 2px,transparent 4rem),
   ;
 
 }

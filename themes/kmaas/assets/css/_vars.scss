@@ -1,16 +1,36 @@
-$theme-colors: (
-    "pry": (
-        "100":hsl(102, 100%, 90%),
-        "200":hsl(102, 80%, 80%),
-        "300":hsl(102, 80%, 60%),
-        "400":hsl(102, 100%, 90%),
-        "600":hsl(102, 70%, 40%),
-        "700": hsl(44.637, 30%, 30%),
+$theme-default: "base";
 
-        "950": hsl(44.637, 21%, 5%),
+$themes: (
+    "base": (
+        "primary": (
+            "100":hsl(102, 100%, 90%),
+            "200":hsl(102, 80%, 80%),
+            "300":hsl(102, 80%, 60%),
+            "400":hsl(102, 100%, 90%),
+            "600":hsl(102, 70%, 40%),
+            "700": hsl(44.637, 30%, 30%),
+
+            "950": hsl(44.637, 21%, 5%),
+        )
+    ),
+    "black": (
+        "primary": (
+            "100":hsl(100.07, 87%, 92%),
+            "200":hsl(100.07, 70%, 80%),
+            "300":hsl(100.07, 60%, 60%),
+            "400":hsl(100.07, 100%, 90%),
+            "600":hsl(100.07, 50%, 40%),
+            "700": hsl(39.824, 94.302%, 20%),
+
+
+            "950": hsl(39.824, 94.302%, 1.7021%)
+        )
     )
 );
-$theme-fonts: (
+
+
+
+$font-defs: (
     "family": (
         "normal": "system-ui, sans-serif",
         "mono": "monospace",
@@ -42,13 +62,13 @@ html {
 
     --content-width: #{$theme-content-width};
 
-    @each $varname, $colors in $theme-colors {
+    @each $varname, $colors in map-get($themes, $theme-default ) {
         @each $name, $value in $colors {
             --color-#{$varname}-#{$name}: #{$value};
         }
     }
-    
-    @each $varname, $data in $theme-fonts {
+        
+    @each $varname, $data in $font-defs {
         @each $name, $value in $data {
             --font-#{$varname}-#{$name}: #{$value};
         }
@@ -60,5 +80,17 @@ html {
     @for $i from 1 through length($theme-sizes) {
         $val: nth($theme-sizes, $i);
         --size-#{$i}: #{$val}rem;
+    }
+
+    --themes: #{map-keys(map-remove($themes, $theme-default))};
+}
+;
+@each $variant, $tc in map-remove($themes, $theme-default) {
+    html[data-theme="#{$variant}"] {
+        @each $varname, $colors in $tc {
+            @each $name, $value in $colors {
+                --color-#{$varname}-#{$name}: #{$value};
+            }
+        }
     }
 }

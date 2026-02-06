@@ -4,9 +4,9 @@
     gap: var(--size-2);
     padding: var(--size-3);
     .page-item {
-        border: var(--color-pry-700) 1px solid;
+        border: var(--color-primary-700) 1px solid;
         padding: var(--size-2);
-        color: var(--color-pry-100);
+        color: var(--color-primary-100);
         text-decoration: none;
         transition: var(--transition-standard);
         .head {
@@ -30,8 +30,8 @@
             margin: 0;
         }
         &:hover {
-            background-color: var(--color-pry-700);
-            color: var(--color-pry-100);
+            background-color: var(--color-primary-700);
+            color: var(--color-primary-100);
         }
     }
 }
