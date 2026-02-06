@@ -17,7 +17,21 @@
     display: flex;
     margin-inline: var(--size-3);
 }
-
+.terms,
+.terms ul {
+    display: flex;
+    gap: var(--size-4);
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    a {
+        color: var(--color-pry-100);
+        &:hover {
+            color: var(--color-pry-300);
+        }
+    }
+}
 .tags {
     display: flex;
     gap: var(--size-4);
