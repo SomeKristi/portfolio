@@ -4,6 +4,9 @@
 {{ $logo := resources.Get "logo.svg" }}
 <meta name="logosvg" content="{{ $logo.RelPermalink }}">
 
+{{ partial "og-image.html" . }}
+
+
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

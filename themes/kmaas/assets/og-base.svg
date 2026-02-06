@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="og_base.png" background="#fff"/>
+    </bx:export>
+  </defs>
+  <rect width="1200" height="630" style="fill: rgb(28, 28, 28);"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="200" ry="200"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="300" ry="300"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="400" ry="400"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="500" ry="500"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="600" ry="600"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="700" ry="700"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="800" ry="800"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="900" ry="900"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="1000" ry="1000"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="1100" ry="1100"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="1200" ry="1200"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="1300" ry="1300"/>
+  <ellipse style="fill: none; stroke: rgb(80, 80, 80);" cy="630.045" rx="100" ry="100"/>
+  <g transform="matrix(0.301398, 0, 0, 0.301398, 951.335144, 66.026672)" style="">
+    <circle style="opacity: 1; fill-opacity: 1; stroke-width: 20; stroke-linejoin: round; stroke-opacity: 1; paint-order: markers stroke; fill: black; stroke: rgb(219, 255, 204);" id="path44" cx="421.748" cy="163.619" r="133.349"/>
+    <path id="path40" style="stroke: none; stroke-width: 0.651; stroke-linejoin: round; stroke-opacity: 1; paint-order: markers stroke; fill: rgb(219, 255, 204); fill-opacity: 0.5;" d="M 485.326 135.326 C 465.082 134.975 441.558 145.434 421.748 163.619 C 384.462 197.849 344.168 214.468 317.053 163.631 C 317.059 191.227 327.738 216.329 345.191 235.029 C 364.301 255.506 391.53 268.309 421.749 268.309 C 479.571 268.309 526.445 221.435 526.445 163.614 C 526.445 163.612 526.445 163.612 526.445 163.612 C 518.494 144.358 503.187 135.634 485.326 135.324 L 485.326 135.326 Z"/>
+    <path id="path41" style="fill-opacity: 1; stroke: none; stroke-width: 21.024; stroke-linejoin: miter; stroke-miterlimit: 11.6; stroke-dasharray: none; stroke-opacity: 1; paint-order: markers stroke; fill: rgb(219, 255, 204);" d="M 358.171 135.319 C 340.31 135.629 325.003 144.352 317.053 163.607 C 317.053 163.607 317.053 163.607 317.053 163.617 C 317.053 191.221 327.734 216.329 345.191 235.034 C 364.301 255.512 391.53 268.314 421.749 268.314 C 479.567 268.314 526.437 221.446 526.445 163.629 C 499.329 214.466 459.034 197.847 421.748 163.617 C 401.939 145.432 378.415 134.973 358.171 135.324 L 358.171 135.319 Z"/>
+  </g>
+</svg>
