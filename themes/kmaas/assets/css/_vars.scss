@@ -4,15 +4,18 @@ $theme-colors: (
         "200":hsl(102, 90%, 80%),
         "300":hsl(102, 80%, 70%),
         "400":hsl(102, 100%, 90%),
+        "600":hsl(102, 70%, 40%),
+        "700": hsl(44.637, 30%, 30%),
+
         "950": hsl(44.637, 21%, 5%),
     )
 );
-
-
 $theme-fonts: (
     "family": (
         "normal": "system-ui, sans-serif",
+        "mono": "monospace",
         "title": "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif",
+        "nav": "Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif",
     ),
     "weight": (
         "light": "100",
@@ -20,20 +23,25 @@ $theme-fonts: (
         "bold": "bold"
     )
 );
-
-
 $theme-sizes: (
     0.25,0.5,0.75,
     1,1.5, 2,
-    3,4,6
-    8
+    3,4,6,
+    8, 10
 );
+$theme-content-width: 60rem;
 
 
+$theme-transitions: (
+    "standard": "color 200ms, background-color 200ms"
+);
 
 
 /* GENERATOR */
 html {
+
+    --content-width: #{$theme-content-width};
+
     @each $varname, $colors in $theme-colors {
         @each $name, $value in $colors {
             --color-#{$varname}-#{$name}: #{$value};
@@ -46,6 +54,9 @@ html {
         }
     }
 
+    @each $name, $value in $theme-transitions {
+        --transition-#{$name}: #{$value};
+    }
     @for $i from 1 through length($theme-sizes) {
         $val: nth($theme-sizes, $i);
         --size-#{$i}: #{$val}rem;

@@ -1,10 +1,6 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1 class="page-title">{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+
+  {{ partial "pagelist.html" (dict "pages" .Pages "transitions" true) }}
 {{ end }}

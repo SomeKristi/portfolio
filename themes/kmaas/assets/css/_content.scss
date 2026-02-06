@@ -1,6 +1,10 @@
 .content {
+    max-width: var(--content-width);
+    margin-inline: auto;
     h1 {
         font-family: var(--font-family-title);
         font-weight: var(--font-weight-light);
+        margin-top: var(--size-6);
+        margin-bottom: var(--size-1);
     }
 }

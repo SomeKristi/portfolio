@@ -1,9 +1,90 @@
 @use "sass:map";
-@import "_vars";
-@import "_content";
+@import "vars";
+@import "content";
+@import "nav";
+@import "pagelist";
 
 body {
   background-color: var(--color-pry-950);
   color: var(--color-pry-100);
   font-family: var(--font-family-normal);
+}
+
+main {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  min-height: 100svh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+  max-height: 100svh;
+  gap: var(--size-3);
+  position: relative;
+  &::after {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    height: 60rem;
+    pointer-events: none;
+    background: radial-gradient(circle, var(--color-pry-700), transparent 50%);
+    opacity: 0;
+    animation: hero-fade 2s 0.5s ease-in-out forwards;
+  }
+
+
+  .logo {
+    z-index: 1;
+    width: var(--size-10);
+    height: var(--size-10);
+  }
+  h1 {
+    z-index: 1;
+  }
+}
+
+footer {
+    max-width: var(--content-width);
+    margin-inline: auto;
+    margin-top: var(--size-5);
+    margin-bottom: var(--size-8);
+    text-align: center;
+}
+
+.page-title {
+  view-transition-name: main-title;
+}
+
+.main-content {
+  view-transition-name: main-content;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+
+
+
+::view-transition-old(hero) {
+}
+
+/* New stuff coming in */
+::view-transition-new(site-brand-logo) {
+  transition: width 200ms 400ms,height 200ms 400ms;
+}
+
+
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+  }
 }

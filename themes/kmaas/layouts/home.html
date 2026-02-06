@@ -1,11 +1,10 @@
 {{ define "main" }}
-  <div class="content">
+  <div class="hero">
+    {{partial "logo.svg" }}
+    <h1 style="view-transition-name: site-brand-title;">Kristian Maas</h1>
+  </div>
+  <div class="content main-content">
     {{ .Content }}
   </div>
-  {{ range site.RegularPages }}
-    <section>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </section>
-  {{ end }}
+  <!--{{ partial "pagelist.html" (dict "pages" site.RegularPages "transitions" false) }}-->
 {{ end }}

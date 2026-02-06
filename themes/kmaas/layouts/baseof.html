@@ -4,7 +4,7 @@
   {{ partial "head.html" . }}
 </head>
 <body>
-  <header>
+  <header class="page-{{ .Kind }}">
     {{ partial "header.html" . }}
   </header>
   <main>
@@ -13,5 +13,10 @@
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+  <script>
+      window.addEventListener('load', () => {
+          quicklink.listen();
+      });
+  </script>
 </body>
 </html>
