@@ -11,7 +11,7 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID}};" class="menu">
+  <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID | safeCSS}};" class="menu">
     {{ if eq $menuID "main"}}
       <button id="main-menu-close" class="mobile-button">{{ partial "icon" "close" }}</button>
     {{ end }}
@@ -39,7 +39,7 @@ Renders a menu for the given menu ID.
     {{- end }}
     {{- $style := ""}}
     {{if $transitions}}
-      {{- $style = printf "view-timeline-name: site-nav-%s;" $name}}
+      {{- $style = printf "view-timeline-name: site-nav-%s;" $name | safeCSS}}
     {{end}}
     <li style="{{$style}}">
       <a

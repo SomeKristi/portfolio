@@ -1,3 +1,7 @@
++++
+title = 'Domov'
+description = 'Jsem student IT na škole G+SOŠ v ročníku 4.I 2025/2026.'
++++
 Jsem student IT na škole G+SOŠ v ročníku 4.I 2025/2026.
 
 # Aktivity

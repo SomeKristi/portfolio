@@ -11,16 +11,16 @@
     "color" "#ffffff"
     "size" 75
     "linespacing" 2
-    "x" 115
-    "y" 380
+    "x" 70
+    "y" 400
     "font" $titleFont
 ))}}
 {{ $img = $img.Filter (images.Text .Description (dict
     "color" "#ffffff"
     "size" 32
     "linespacing" 2
-    "x" 120
-    "y" 500
+    "x" 75
+    "y" 510
     "font" $descriptionFont
 ))}} 
 {{ $img = resources.Copy (path.Join "og-images/" .Page.RelPermalink "/og.png") $img }}

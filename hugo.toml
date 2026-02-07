@@ -3,6 +3,23 @@ languageCode = 'cs-cz'
 title = 'Kristián Maas'
 theme = 'kmaas'
 
+[menus]
+  [[menus.main]]
+    name = 'Domov'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/posts'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Projekty'
+    pageRef = '/projects'
+    weight = 15
+
+
 
 [caches]
   [caches.images]

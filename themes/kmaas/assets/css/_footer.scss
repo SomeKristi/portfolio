@@ -2,8 +2,8 @@
 footer {
     max-width: var(--content-width);
     margin-inline: auto;
-    margin-top: var(--size-5);
-    margin-bottom: var(--size-8);
+    margin-top: var(--size-8);
+    margin-bottom: var(--size-5);
     text-align: center;
     #footer-menu ul {
         display: flex;
@@ -27,6 +27,17 @@ footer {
             &:hover {
                 border: var(--color-primary-100) 1px solid;
             }
+        }
+    }
+    .sub-footer {
+        color: var(--color-primary-600);
+        font-size: var(--size-3);
+    }
+
+    a {
+        color: var(--color-primary-100);
+        &:hover {
+            color: var(--color-primary-300);
         }
     }
 }

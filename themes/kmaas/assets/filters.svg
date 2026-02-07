@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="degrade" bx:pinned="true" primitiveUnits="objectBoundingBox">
+      <feMorphology result="morphology-0" in="SourceGraphic" radius="0.001 0.005"/>
+    </filter>
+    <filter id="filter-0" bx:pinned="true" primitiveUnits="objectBoundingBox"/>
+  </defs>
+</svg>
