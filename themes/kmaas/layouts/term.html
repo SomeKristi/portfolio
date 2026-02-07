@@ -2,6 +2,7 @@
   {{ $PageKey := printf "%s-%s" .LinkTitle .Kind | urlize}}
   <div class="cw">
       <div class="page-title">
+        <div class="bg"></div>
         <h1 style="width:fit-content; view-transition-name: pd-{{$PageKey | safeCSS}}">{{ .Title }}</h1>
       </div>
     <div class="content main-content">

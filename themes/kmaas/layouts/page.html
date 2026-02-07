@@ -2,6 +2,12 @@
   {{ $PageKey := printf "%s-%s" .LinkTitle .Kind | urlize}}
   <div class="cw">
     <div class="page-title">
+      {{ with .Resources.GetMatch "cover.*" }}
+        {{ with .Fill "900x300 webp" }}
+          <img src="{{ .RelPermalink }}" class="cover" alt="">
+        {{ end }}
+      {{ end }}
+      <div class="bg"></div>
       <h1 style="view-transition-name: pt-{{$PageKey | safeCSS}};">{{ .Title }}</h1>
     </div>
 

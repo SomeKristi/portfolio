@@ -2,6 +2,8 @@
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
+  {{ block "head" . }}{{ end }}
+
 </head>
 <body>
   <header class="page-{{ .Kind }}">
@@ -13,11 +15,14 @@
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+  {{ block "scripts" . }}{{ end }}
+
   <script>
       window.addEventListener('load', () => {
           quicklink.listen();
       });
   </script>
   {{ ("/assets/icons.svg" | readFile) | safeHTML}}
+  {{ ("/assets/filters.svg" | readFile) | safeHTML}}
 </body>
 </html>

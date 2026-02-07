@@ -1,0 +1,21 @@
+{{- $pages := slice -}}
+
+{{- range .Site.Pages -}}
+  {{ if and
+      (not .Params.unlisted)
+      (ne .Kind "term")
+      (ne .Kind "taxonomy")
+      (ne .Kind "section")
+      (ne .Kind "RSS")
+  }}
+    {{- $pages = $pages | append (dict
+        "title" .Title
+        "description" .Description
+        "permalink" .Permalink
+        "kind" .Kind
+        "tags" .Params.tags
+    ) -}}
+  {{end}}
+{{- end -}}
+
+{{- $pages | jsonify -}}

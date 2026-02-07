@@ -11,18 +11,19 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID}};">
-    {{ if $menuID = "main"}}
+  <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID}};" class="menu">
+    {{ if eq $menuID "main"}}
       <button id="main-menu-close" class="mobile-button">{{ partial "icon" "close" }}</button>
     {{ end }}
     <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "transitions" (eq $menuID "main")) }}
     </ul>
   </nav>
 {{- end }}
 
 {{- define "_partials/inline/menu/walk.html" }}
   {{- $page := .page }}
+  {{- $transitions := .transitions}}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
     {{- if $page.IsMenuCurrent .Menu . }}
@@ -36,7 +37,11 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li style="view-timeline-name: site-nav-{{ $name }};">
+    {{- $style := ""}}
+    {{if $transitions}}
+      {{- $style = printf "view-timeline-name: site-nav-%s;" $name}}
+    {{end}}
+    <li style="{{$style}}">
       <a
         {{- range $k, $v := $attrs }}
           {{- with $v }}
@@ -44,11 +49,6 @@ Renders a menu for the given menu ID.
           {{- end }}
         {{- end -}}
       >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
     </li>
   {{- end }}
 {{- end }}

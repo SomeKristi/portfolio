@@ -9,7 +9,7 @@ header {
     padding-inline: var(--size-4);
     margin-inline: auto;
     border-bottom: var(--color-primary-100) 1px solid;
-    
+    view-transition-name: site-header;
     .brand {
         color: var(--color-primary-100);
         display: flex;

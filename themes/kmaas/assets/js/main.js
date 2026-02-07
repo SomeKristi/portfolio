@@ -3,7 +3,6 @@ function addMainMenuControler() {
     const mainMenuOpen = document.getElementById("main-menu-open")
     const mainMenu = document.getElementById("main-menu")
     const mainMenuClose = document.getElementById("main-menu-close")
-    console.log(mainMenuOpen,mainMenu,mainMenuClose)
     if (mainMenuOpen && mainMenu && mainMenuClose) {
         mainMenuOpen.addEventListener("click", () => mainMenu.classList.add("open"))
         mainMenuClose.addEventListener("click", () => mainMenu.classList.remove("open"))
@@ -36,7 +35,6 @@ async function generateSVGFav() {
     }
     let svg = baseSVG;
     svg = svg.replaceAll('currentcolor',color)
-    console.log(svg)
 
     const blob = new Blob([svg], { type: "image/svg+xml" });
     const url = URL.createObjectURL(blob);
@@ -47,7 +45,6 @@ async function generateSVGFav() {
     link.rel = "icon";
     document.head.appendChild(link);
     }
-    console.log("s")
     link.href = url;
 }
 

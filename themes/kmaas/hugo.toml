@@ -13,10 +13,27 @@ title = 'My New Hugo Site'
     pageRef = '/posts'
     weight = 20
 
-  [[menus.main]]
+  
+
+  # Footer menu
+  [[menus.footer]]
+    name = "About"
+    pageRef = "/about"
+    weight = 10
+  [[menus.footer]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 20
+  [[menus.footer]]
     name = 'Tags'
     pageRef = '/tags'
     weight = 30
+  [[menus.footer]]
+    name = 'Search'
+    pageRef = '/search/'
+    weight = 40
+
+
 
 [module]
   [module.hugoVersion]
