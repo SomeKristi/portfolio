@@ -68,10 +68,18 @@
 }
 
 .loading {
+    margin-top: var(--size-4);
     margin-inline: auto;
-    width: var(--size-4);
-    height: var(--size-4);
-    border: transparent 2px solid;
-    border-top: var(--color-primary-100) 2px solid;
+    width: var(--size-6);
+    height: var(--size-6);
+    border: transparent var(--size-1) solid;
+    border-top: var(--color-primary-100) var(--size-1) solid;
+    border-bottom: var(--color-primary-100) var(--size-1) solid;
     border-radius: 100px;
+    animation: loading 400ms linear infinite;
+}
+@keyframes loading {
+    to {
+        rotate: 1turn;
+    }
 }
