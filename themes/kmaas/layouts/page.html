@@ -10,12 +10,13 @@
       <div class="bg"></div>
       <h1 style="view-transition-name: pt-{{$PageKey | safeCSS}};">{{ .Title }}</h1>
     </div>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <div class="content-info">
-      <time datetime="{{ $dateMachine }}" style="view-transition-name: pd-{{$PageKey | safeCSS}}">{{ $dateHuman }}</time>
-    </div>
+    {{ if not .Params.noDate }}
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <div class="content-info">
+        <time datetime="{{ $dateMachine }}" style="view-transition-name: pd-{{$PageKey | safeCSS}}">{{ $dateHuman }}</time>
+      </div>
+    {{end}}
     <div class="content main-content" style="view-transition-name: pc-{{$PageKey | safeCSS}}">
   
       {{ .Content }}
