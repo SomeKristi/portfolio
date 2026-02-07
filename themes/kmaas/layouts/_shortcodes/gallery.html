@@ -1,0 +1,38 @@
+{{/* 
+  Usage:
+    {{< gallery folder="images/gallery1" >}}
+
+  Expects:
+    - A folder inside the page bundle (recommended)
+    - Or a folder under /assets (works with .Resources.GetMatch)
+*/}}
+
+{{ $folder := .Get "folder" }}
+{{ if not $folder }}
+  <p><strong>Error:</strong> gallery shortcode requires folder="..."</p>
+{{ else }}
+  {{ $images := .Page.Resources.Match (printf "%s/*" $folder) }}
+  {{ if not $images }}
+    <p><strong>No images found in:</strong> {{ $folder }}</p>
+  {{ else }}
+    <div class="gallery">
+      {{ range $images }}
+        
+        {{/* Thumbnail for gallery grid */}}
+        {{ $thumb := .Resize "400x q60 jpeg" }}
+        {{ $w := .Width }}
+        {{ $h := .Height }}
+        <a 
+          href="{{ .RelPermalink }}"
+          data-pswp-width="{{ $w }}"
+          data-pswp-height="{{ $h }}"
+          data-cropped="true"
+          class="gallery-item"
+        >
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ .Name }}" loading="lazy">
+        </a
+a>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

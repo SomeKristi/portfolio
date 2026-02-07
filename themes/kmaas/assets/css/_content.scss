@@ -5,6 +5,26 @@
         margin-top: var(--size-6);
         margin-bottom: var(--size-1);
     }
+
+    figure {
+        img {
+            max-width: 100%;
+        }
+        figcaption p {
+            margin-block: var(--size-1) var(--size-3);
+        }
+    }
+
+    .gallery {
+        padding: var(--size-2);
+        margin-block: var(--size-4);
+        display: grid;
+        gap: var(--size-2);
+        grid-template-columns: repeat(2,1fr);
+        .gallery-item img {
+            width: 100%;
+        }
+    }
 }
 
 .cw {
