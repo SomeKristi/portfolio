@@ -18,9 +18,18 @@
   {{ block "scripts" . }}{{ end }}
 
   <script>
-      window.addEventListener('load', () => {
-          quicklink.listen();
-      });
+    window.addEventListener('load', () => {
+        quicklink.listen();
+    });
+  </script>
+  <script type="module">
+    import PhotoSwipeLightbox from '{{ "lib/photoswipe/photoswipe-lightbox.esm.min.js" |absURL}}';
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: 'div.gallery',
+        children: '.gallery-item',
+        pswpModule: () => import('{{ "lib/photoswipe/photoswipe.esm.min.js" |absURL}}')
+    });
+    lightbox.init();
   </script>
   {{ ("/assets/icons.svg" | readFile) | safeHTML}}
   {{ ("/assets/filters.svg" | readFile) | safeHTML}}

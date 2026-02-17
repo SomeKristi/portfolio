@@ -13,7 +13,7 @@ Renders a menu for the given menu ID.
 {{- with index site.Menus $menuID }}
   <nav id="{{$menuID}}-menu" style="view-transition-name: nav-{{$menuID | safeCSS}};" class="menu">
     {{ if eq $menuID "main"}}
-      <button id="main-menu-close" class="mobile-button">{{ partial "icon" "close" }}</button>
+      <button id="main-menu-close" class="mobile-button" aria-label="Close Main Navigation">{{ partial "icon" "close" }}</button>
     {{ end }}
     <ul>
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" . "transitions" (eq $menuID "main")) }}
@@ -26,6 +26,10 @@ Renders a menu for the given menu ID.
   {{- $transitions := .transitions}}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}
+    {{- if not .URL }}
+      {{- $attrs = merge $attrs (dict "disabled" "active") }}
+    {{- end }}
+
     {{- if $page.IsMenuCurrent .Menu . }}
       {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}

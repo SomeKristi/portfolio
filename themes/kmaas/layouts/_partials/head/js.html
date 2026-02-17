@@ -15,16 +15,3 @@
   {{- end }}
 {{- end }}
 <script src="{{ "lib/quicklink.js" |absURL}}"></script>
-<script type="module">
-  import PhotoSwipeLightbox from '{{ "lib/photoswipe/photoswipe-lightbox.esm.min.js" |absURL}}';
-
-  function onLoad() {
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: 'div.gallery',
-      children: '.gallery-item',
-      pswpModule: () => import('{{ "lib/photoswipe/photoswipe.esm.min.js" |absURL}}')
-    });
-    lightbox.init();
-  }
-  window.addEventListener("DOMContentLoaded",onLoad)
-</script>

@@ -23,6 +23,8 @@ footer {
             cursor: pointer;
             &:not([href]) {
                 color: var(--color-primary-700);
+                cursor: default;
+                pointer-events: none;
             }
             &:hover {
                 border: var(--color-primary-100) 1px solid;

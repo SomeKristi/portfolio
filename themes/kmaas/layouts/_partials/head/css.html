@@ -1,10 +1,10 @@
 {{- with resources.Get "css/main.scss" | toCSS }}
   {{- if hugo.IsDevelopment }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    <link rel="stylesheet" href="{{ .RelPermalink }}" fetchpriority="high">
   {{- else }}
     {{- with . | minify | fingerprint }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" fetchpriority="high">
     {{- end }}
   {{- end }}
 {{- end }}
-<link rel="stylesheet" href="{{ "lib/photoswipe/photoswipe.css" |absURL}}">
+<link rel="stylesheet" href="{{ "lib/photoswipe/photoswipe.css" |absURL}}" fetchpriority="low">
